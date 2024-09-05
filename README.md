@@ -1,7 +1,7 @@
 # Remote Shutdown
 
 ## Overview
-Remote Shutdown is a C# application (installable as service), that sets up an HTTP server to listen for shutdown commands over the network. When a valid request is received with the correct shutdown token, the program initiates a system shutdown on the local machine.
+Remote Shutdown is a Windows Service made in C#, that sets up an HTTP server to listen for shutdown commands over the network. When a valid request is received with the correct shutdown token, the program initiates a system shutdown on the local machine.
 
 ## Features
 - Remote shutdown functionality over the network.
