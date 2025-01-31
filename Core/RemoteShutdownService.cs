@@ -29,6 +29,8 @@ internal sealed class RemoteShutdownService
             var requestUrl = context.Request.Url;
             var response = context.Response;
 
+            WriteLog("Request received!", ConsoleColor.Green);
+            
             if (requestUrl != null && requestUrl.Query.Contains("shutdown=true")
                                    && requestUrl.Query.Contains($"token={token}"))
             {
