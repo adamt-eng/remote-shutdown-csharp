@@ -3,7 +3,7 @@
 ## Overview
 Remote Shutdown is a Windows Service made in **C#**, that sets up an HTTP server to listen for shutdown commands over the network. When a valid request is received with the correct shutdown token, the program initiates a system shutdown on the local machine.
 
-> ℹ️ Want it in Python? Check out [remote-shutdown-csharp -py](https://github.com/adamt-eng/remote-shutdown-csharp -py)!
+> ℹ️ Want it in Python? Check out [remote-shutdown-py](https://github.com/adamt-eng/remote-shutdown-py)!
 
 ## Features
 - Remote shutdown functionality over the network.
@@ -88,7 +88,7 @@ Make sure the correct IP address and port are accessible over the network, and t
   sc start "Remote Shutdown"
   ```
 
-> ℹ️ You could also use the Python version, which automatically runs the script at startup: [remote-shutdown-csharp -py](https://github.com/adamt-eng/remote-shutdown-csharp -py)!
+> ℹ️ You could also use the Python version, which automatically runs the script at startup: [remote-shutdown-py](https://github.com/adamt-eng/remote-shutdown-py)!
 
 ## Usage
 1. To initiate a remote shutdown, append `parameters?shutdown=true&token=<your-token>` to the URL that the application says it's listenting to requests at.
