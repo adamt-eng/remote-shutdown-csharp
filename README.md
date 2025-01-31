@@ -1,15 +1,24 @@
 # Remote Shutdown
 
 ## Overview
-Remote Shutdown is a Windows Service made in C#, that sets up an HTTP server to listen for shutdown commands over the network. When a valid request is received with the correct shutdown token, the program initiates a system shutdown on the local machine.
+Remote Shutdown is a Windows Service made in **C#**, that sets up an HTTP server to listen for shutdown commands over the network. When a valid request is received with the correct shutdown token, the program initiates a system shutdown on the local machine.
+
+> ℹ️ Want it in Python? Check out [remote-shutdown-py](https://github.com/adamt-eng/remote-shutdown-py)!
 
 ## Features
 - Remote shutdown functionality over the network.
 - Token-based authorization for security.
 - Simple HTTP server to listen for shutdown requests.
 
-## Requirements
+## Compatibility
 - Windows OS
+
+## Configuration
+The application uses a `config.json` file for configuration, which includes:
+- `PortNumber`: The port on which the HTTP server listens.
+- `Token`: The token required to authorize the shutdown request.
+
+Make sure the correct IP address and port are accessible over the network, and that the token is kept secure.
 
 ## Installation
 
@@ -22,7 +31,7 @@ Remote Shutdown is a Windows Service made in C#, that sets up an HTTP server to 
   ```bash
   dotnet --version
   ```
-  ### 2. **Download the Source Code**
+### 2. **Download the Source Code**
 
 - Clone this repository using the following command:
 
@@ -79,12 +88,7 @@ Remote Shutdown is a Windows Service made in C#, that sets up an HTTP server to 
   sc start "Remote Shutdown"
   ```
 
-## Configuration
-The application uses a `config.json` file for configuration, which includes:
-- `PortNumber`: The port on which the HTTP server listens.
-- `Token`: The token required to authorize the shutdown request.
-
-Make sure the correct IP address and port are accessible over the network, and that the token is kept secure.
+> ℹ️ You could also use the Python version, which automatically runs the script at startup: [remote-shutdown-py](https://github.com/adamt-eng/remote-shutdown-py)!
 
 ## Usage
 1. To initiate a remote shutdown, append `parameters?shutdown=true&token=<your-token>` to the URL that the application says it's listenting to requests at.
